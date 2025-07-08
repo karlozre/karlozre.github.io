@@ -12,29 +12,32 @@
 </head>
 <body>
     <div class="invitation-container">
+        <div class="card-content">
+            <h1 class="title">IT’S MY <br>BIRTHDAY</h1>
+            <div class="age">21 <span class="flower">🏵️</span></div>
+
+            <div class="details">
+                <p><strong>Viernes</strong><br>25 de Julio<br>2:00 pm</p>
+                <a href="https://maps.app.goo.gl/A94b1ETyEpoB7MCKA" class="link-details">
+                    <p class="location">
+                    Río las palmas 145<br>
+                    Cuarto Sector 67280,<br>
+                    Monte Kristal, N.L.<br>
+                    </p>
+                </a>  
+            </div>
+            <p class="vibe">Acompáñanos con tu vibra hawaianaaa 🌺</p>
+            <p class="rsvp">Confirma tu asistencia con:<br>
+            <img src="images/instagram.png" alt="Teléfono" class="icon-phone">
+            <a href="https://www.instagram.com/aleida._rmt/" class="link-details"><strong>@aleida._rmt</strong></a></p>
+            <div class="decor decor-bottom"></div>
+            <button onclick="lanzarFiesta()" class="fiesta-button">🌺</button>
+        </div>
         <img src="images/flores-hawaianas.png" alt="Decoración de hojas" class="leaf-decor top-left">
         <img src="images/flores-hawaianas.png" alt="Decoración de hojas" class="leaf-decor bottom-right">
         <div class="decor decor-top"></div>
 
-        <h1 class="title">IT’S MY <br>BIRTHDAY</h1>
-        <div class="age">21 <span class="flower">🏵️</span></div>
-
-        <div class="details">
-            <p><strong>Viernes</strong><br>25 de Julio<br>2:00 pm</p>
-            <a href="https://maps.app.goo.gl/A94b1ETyEpoB7MCKA" class="link-details">
-                <p class="location">
-                Río las palmas 145<br>
-                Cuarto Sector 67280,<br>
-                Monte Kristal, N.L.<br>
-                </p>
-            </a>  
-        </div>
-        <p class="vibe">Acompáñanos con tu vibra hawaianaaa 🌺</p>
-        <p class="rsvp">Confirma tu asistencia con:<br>
-        <img src="images/instagram.png" alt="Teléfono" class="icon-phone">
-        <a href="https://www.instagram.com/aleida._rmt/" class="link-details"><strong>@aleida._rmt</strong></a></p>
-        <div class="decor decor-bottom"></div>
-        <button onclick="lanzarFiesta()" class="fiesta-button">🌺</button>
+        
         <audio id="musicaHawaiana" src="images/xpSound.mp3"></audio>
         <div id="confeti-flores"></div>
     </div>
@@ -47,13 +50,13 @@
             // Lanza flores como confeti
             const contenedor = document.getElementById("confeti-flores");
 
-            for (let i = 0; i < 30; i++) {
+            for (let i = 0; i < 100; i++) {
                 const flor = document.createElement("span");
                 flor.textContent = "🌸"; // Puedes cambiar por 🌺 o 🌼
                 flor.style.position = "absolute";
                 flor.style.left = Math.random() * 100 + "vw";
                 flor.style.top = "-50px";
-                flor.style.fontSize = Math.random() * 20 + 20 + "px";
+                flor.style.fontSize = Math.random() * 40 + 40 + "px";
                 flor.style.animation = "caerFlor " + (Math.random() * 3 + 3) + "s linear forwards";
                 contenedor.appendChild(flor);
 
