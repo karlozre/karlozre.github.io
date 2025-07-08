@@ -1,0 +1,314 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "EB Garamond", serif;
+  background-image: url('images/illustration-of-wavy-blue-sea-surface-flat-design-free-vector.jpg'); /* Puedes reemplazar por una imagen base similar */
+  background-size: cover;
+  background-position: center;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+
+/* Contenedor principal */
+.invitation-container {
+  background: rgba(255, 255, 255, 0.2); /* fondo semitransparente */
+  backdrop-filter: blur(5px); /* desenfoque */
+  -webkit-backdrop-filter: blur(10px); /* compatibilidad Safari */
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  height: 90vh;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 2s ease-in-out;
+  z-index: 1;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2),
+              0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Título principal */
+.title {
+  font-size: 2.7rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.link-details{
+  text-decoration: none;
+  color: #000;
+}
+
+.link-details:hover{
+  text-decoration: none;
+  color: #ff4fa1;
+  font-weight: bold;
+  transition: 300ms;
+}
+
+.link-details:active{
+  text-decoration: none;
+  color: #ff4fa1;
+  font-weight: bold;
+  transition: 300ms;
+}
+
+/* Edad */
+.age {
+  font-size: 7rem;
+  font-weight: bold;
+  color: #000;
+  animation: bounce 2s infinite;
+}
+
+.flower {
+  font-size: 3rem;
+  display: inline-block;
+  animation: spin 5s linear infinite;
+}
+
+/* Detalles */
+.details {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.details p {
+  margin: 10px;
+  font-size: 1rem;
+}
+
+span .flower {
+  font-size: 2rem;
+}
+
+/* Vibra hawaiana */
+.vibe {
+  font-size: 1.2rem;
+  margin: 20px 0;
+  font-style: italic;
+  animation: pulse 3s infinite;
+}
+
+.fiesta-button {
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  background-color: #ff99c8;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+  position: relative;
+  z-index: 5;
+}
+
+.fiesta-button:hover {
+  background-color: #ff4fa1;
+}
+
+/* Contenedor de confeti de flores */
+#confeti-flores {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+@keyframes caerFlor {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Confirmación */
+.rsvp {
+  font-size: 1rem;
+}
+
+/* Decoración (puedes usar imágenes PNG o emojis animados) */
+.decor-top, .decor-bottom {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 0;
+}
+
+.decor-top {
+  top: -20px;
+  left: -20px;
+  background-image: url('flores-top.png');
+  animation: float 6s ease-in-out infinite;
+}
+
+.decor-bottom {
+  bottom: -20px;
+  right: -20px;
+  background-image: url('flamingo.png');
+  animation: floatReverse 6s ease-in-out infinite;
+}
+
+/* Animaciones */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes floatReverse {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(15px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .age {
+    font-size: 3rem;
+  }
+
+  .details {
+    flex-direction: column;
+  }
+
+  .decor-top, .decor-bottom {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+.leaf-decor {
+  position: absolute;
+  width: 160px;
+  height: auto;
+  opacity: 0.9;
+  animation: fadeIn 2s ease-in-out;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.leaf-decor.top-left {
+  top: -20px;
+  left: -20px;
+}
+
+.leaf-decor.bottom-right {
+  bottom: -20px;
+  right: -20px;
+}
+
+@media (max-width: 480px) {
+  .leaf-decor {
+    width: 70px;
+  }
+}
+
+/* Botón de ayuda */
+.help-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #ffffffbb;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+  z-index: 10;
+}
+
+.help-button:hover {
+  transform: scale(1.1);
+}
+
+/* Pop-up */
+.popup {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  font-size: 1.3rem;
+  position: relative;
+  max-width: 300px;
+}
+
+.icon-phone {
+  width: 16px;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #999;
+}
