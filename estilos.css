@@ -214,7 +214,7 @@ span .flower {
 
 .leaf-decor {
   position: absolute;
-  width: 50vw;          /* 25% del ancho de pantalla */
+  width: 170vw;          /* 25% del ancho de pantalla */
   max-width: 170px;     /* Tamaño máximo en pantallas grandes */
   height: auto;
   opacity: 0.95;
@@ -237,7 +237,7 @@ span .flower {
 /* Mejoras opcionales para pantallas muy pequeñas */
 @media (max-width: 480px) {
   .leaf-decor {
-    width: 50vw;
+    width: 170vw;
     max-width: 90px;
   }
 }
