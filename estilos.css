@@ -150,29 +150,6 @@ span .flower {
   font-size: 1rem;
 }
 
-/* Decoración (puedes usar imágenes PNG o emojis animados) */
-.decor-top, .decor-bottom {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  z-index: 0;
-}
-
-.decor-top {
-  top: -20px;
-  left: -20px;
-  background-image: url('flores-top.png');
-  animation: float 6s ease-in-out infinite;
-}
-
-.decor-bottom {
-  bottom: -20px;
-  right: -20px;
-  background-image: url('flamingo.png');
-  animation: floatReverse 6s ease-in-out infinite;
-}
 
 /* Animaciones */
 @keyframes bounce {
@@ -235,6 +212,17 @@ span .flower {
   pointer-events: none;
 }
 
+.leaf-decor {
+  position: absolute;
+  width: 50vw;          /* 25% del ancho de pantalla */
+  max-width: 170px;     /* Tamaño máximo en pantallas grandes */
+  height: auto;
+  opacity: 0.95;
+  z-index: 2;
+  pointer-events: none;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
 .leaf-decor.top-left {
   top: -20px;
   left: -20px;
@@ -243,11 +231,14 @@ span .flower {
 .leaf-decor.bottom-right {
   bottom: -20px;
   right: -20px;
+  transform: rotate(180deg);
 }
 
+/* Mejoras opcionales para pantallas muy pequeñas */
 @media (max-width: 480px) {
   .leaf-decor {
-    width: 70px;
+    width: 50vw;
+    max-width: 90px;
   }
 }
 
