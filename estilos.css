@@ -1,4 +1,4 @@
-/* Reset*/
+/* Reset se pego*/
 * {
   margin: 0;
   padding: 0;
@@ -45,7 +45,7 @@ body {
 
 .card-content {
   width: 100%;
-  height: 90%;
+  z-index: 3;
 }
 
 /* Título principal */
@@ -156,6 +156,8 @@ span .flower {
 /* Confirmación */
 .rsvp {
   font-size: 1rem;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 
@@ -193,7 +195,10 @@ span .flower {
 /* Responsive */
 @media (max-width: 480px) {
   .title {
-    font-size: 1.5rem;
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: #7a003b;
+    text-shadow: 3px 7px 7px rgb(249, 112, 235);
   }
 
   .age {
@@ -208,7 +213,14 @@ span .flower {
     width: 70px;
     height: 70px;
   }
+
+  .card-content {
+    width: 100%;
+    height: 97%;
+    z-index: 3;
+  }
 }
+
 
 .leaf-decor {
   position: absolute;
@@ -245,8 +257,8 @@ span .flower {
 /* Mejoras opcionales para pantallas muy pequeñas */
 @media (max-width: 480px) {
   .leaf-decor {
-    width: 500vw;
-    max-width: 500px;
+    width: 170vw;
+    max-width: 170px;
   }
 }
 
