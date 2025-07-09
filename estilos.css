@@ -62,7 +62,8 @@ body {
 
 .link-details:hover{
   text-decoration: none;
-  color: #ff4fa1;
+  color: #8d1b50;
+  text-shadow: 2px 2px 5px white;
   font-weight: bold;
   transition: 300ms;
 }
@@ -82,10 +83,17 @@ body {
   animation: bounce 2s infinite;
 }
 
+.location {
+  font-weight: bold;
+}
+
 .flower {
   font-size: 3rem;
   display: inline-block;
-  animation: spin 5s linear infinite;
+}
+
+.flower:active{
+  animation: spin 200ms linear infinite;
 }
 
 /* Detalles */
@@ -182,6 +190,11 @@ span .flower {
   50% { transform: translateY(-15px); }
 }
 
+@keyframes opacityImg {
+  from { opacity: 1;}
+  to { opacity: 0.2;}
+}
+
 @keyframes floatReverse {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(15px); }
@@ -194,6 +207,20 @@ span .flower {
 
 /* Responsive */
 @media (max-width: 480px) {
+
+  body {
+    font-family: "EB Garamond", serif;
+    background-image: url('images/Wallpapermovil.jpg'); /* Puedes reemplazar por una imagen base similar */
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+  }
+
   .title {
     font-size: 2.3rem;
     font-weight: bold;
@@ -239,6 +266,18 @@ span .flower {
   animation: fadeIn 1.5s ease-in-out;
 }
 
+
+
+.decoration {
+  position: absolute;
+    /* Tamaño máximo en pantallas grandes */
+  height: auto;
+  opacity: 0.95;
+  z-index: 2;
+  pointer-events: none;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
 .leaf-decor.top-left {
   top: -20px;
   left: -20px;
@@ -247,8 +286,32 @@ span .flower {
 .leaf-decor.bottom-right {
   bottom: -20px;
   right: -20px;
-  transform: rotate(180deg);
 }
+
+.decoration.bottom-left {
+  bottom: -20px;
+  right: -20px;
+  width: 20vw;
+}
+
+.decoration.top-left {
+  top: -20px;
+  left: -20px;
+  width: 20vw;
+}
+
+.decoration.top-right {
+  bottom: -50px;
+  right: -60x;
+  width: 200vw;
+  animation: opacityImg 5s ease-out;
+  opacity: 0.2;
+}
+.leaf-decoration.top-right {
+  top: -50px;
+  right: -50px;
+}
+
 
 /* Mejoras opcionales para pantallas muy pequeñas */
 @media (max-width: 480px) {
