@@ -205,10 +205,6 @@ span .flower {
     font-size: 3rem;
   }
 
-  .details {
-    flex-direction: column;
-  }
-
   .decor-top, .decor-bottom {
     width: 70px;
     height: 70px;
