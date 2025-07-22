@@ -1,4 +1,4 @@
-/* Reset se pego*/
+
 * {
   margin: 0;
   padding: 0;
@@ -381,4 +381,12 @@ span .flower {
   font-size: 1.5rem;
   cursor: pointer;
   color: #999;
+}
+
+.countdown-timer {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #d61874;
+  margin: 15px 0;
+  animation: bounce 5s;
 }
