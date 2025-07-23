@@ -161,6 +161,18 @@ span .flower {
   }
 }
 
+.rotate-in {
+  transition: transform 1s ease, opacity 1s ease;
+  transform: rotateX(0deg);
+  opacity: 1;
+}
+
+.rotate-out {
+  transition: transform 1s ease, opacity 1s ease;
+  transform: rotateX(90deg);
+  opacity: 0;
+}
+
 /* Confirmación */
 .rsvp {
   font-size: 1rem;
@@ -386,7 +398,7 @@ span .flower {
 .countdown-timer {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #d61874;
+  color: white;
   margin: 15px 0;
   animation: bounce 5s;
 }
