@@ -8,15 +8,37 @@
   </head>
   <body>
     <main class="container_background">
-        <div>
-
-        </div>
-        <button class="btn-grad">
-            Clic
-        </button>
-
+      <div id="rose" class="rose">🌹</div>
+      <button class="btn-grad" id="btn">🌟</button>
     </main>
-    <script></script>
+    <script>
+      const btn = document.getElementById("btn");
+      const rose = document.getElementById("rose");
+
+      let isDead = false;
+
+      btn.addEventListener("click", () => {
+        if (isDead) return;
+
+        // Probabilidad de 20%
+        const random = Math.random();
+
+        if (random < 0.2) {
+          // La rosa muere
+          rose.textContent = "🥀";
+          rose.style.transform = "scale(1.2)";
+          rose.style.filter = "grayscale(80%)";
+          btn.disabled = true;
+          btn.textContent = "La rosa murió";
+          isDead = true;
+        } else {
+          // Pequeña animación de tensión
+          rose.style.transform = "scale(1.1)";
+          setTimeout(() => {
+            rose.style.transform = "scale(1)";
+          }, 150);
+        }
+      });
+    </script>
   </body>
 </html>
-
