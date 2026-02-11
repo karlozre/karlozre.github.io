@@ -1,116 +1,21 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitación de Cumpleaños</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="estilos.css">
-    <link rel="icon" href="images/flowers_top_left.png">
-</head>
-<body>
-    <div class="invitation-container">
-        <div class="card-content">
-            <h1 id="titulo" class="title rotate-in">IT’S MY <br>BIRTHDAY</h1>
-            <div class="age">21</div>
-            <button onclick="lanzarFiesta()" class="fiesta-button">🌺</button>
-            <div class="details">
-                <p><strong>Viernes</strong><br>25 de Julio<br>2:00 pm</p>
-                <a href="https://maps.app.goo.gl/g9JvZoxUf8T29sCC8" class="link-details">
-                    <p class="location">
-                        Mini Quinta Wakanda💦<br>
-                        Venado #105 Col. <br>
-                        Praderas de Gpe. N.L.
-                    </p>
-                </a>  
-            </div>
-            <p class="vibe">Acompáñanos con tu vibra hawaianaaa 🌺</p>
-            <p id="countdown" class="countdown-timer">Cargando cuenta regresiva...</p>
-            <div class="decor decor-top"></div>
-            <div class="decor decor-bottom"></div>
-            
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="design.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="container_background">
+        <div>
+
         </div>
-        <img src="images/flores-hawaianas.png" alt="Decoración de hojas" class="leaf-decor top-left">
-        <img src="images/flores-hawaianas.png" alt="Decoración de hojas" class="leaf-decor bottom-right">
-        <img src="images/flamencoh.png" alt="cocos" class="decoration top-right">
-        <img src="images/coconut.jpg" alt="flamenco" class="decoration bottom-left">
-        <img src="images/coconut.jpg" alt="flamenco" class="decoration top-left">
+        <button class="btn-grad">
+            Clic
+        </button>
 
-
-        
-        <audio id="musicaHawaiana" src="images/xpSound.mp3"></audio>
-        <div id="confeti-flores"></div>
-    </div>
-    <script>
-        function lanzarFiesta() {
-            // Reproduce la música
-            const musica = document.getElementById("musicaHawaiana");
-            musica.play();
-
-            // Lanza flores como confeti
-            const contenedor = document.getElementById("confeti-flores");
-
-            for (let i = 0; i < 100; i++) {
-                const flor = document.createElement("span");
-                flor.textContent = "🌸"; // Puedes cambiar por 🌺 o 🌼
-                flor.style.position = "absolute";
-                flor.style.left = Math.random() * 100 + "vw";
-                flor.style.top = "-50px";
-                flor.style.fontSize = Math.random() * 30 + 30 + "px";
-                flor.style.animation = "caerFlor " + (Math.random() * 3 + 3) + "s linear forwards";
-                contenedor.appendChild(flor);
-
-                // Elimina la flor después de la animación
-                setTimeout(() => flor.remove(), 7000);
-            }
-        }
-
-        function actualizarCuentaRegresiva() {
-            const cuenta = document.getElementById("countdown");
-            const fechaEvento = new Date();
-            fechaEvento.setFullYear(2025);
-            fechaEvento.setMonth(6); // Julio es mes 6
-            fechaEvento.setDate(25);
-            fechaEvento.setHours(12, 0, 0, 0); // 12:00:00.000 PM
-            const ahora = new Date();
-            
-            console.log(fechaEvento);
-            console.log(ahora)
-            const diferencia = fechaEvento - ahora;
-
-            if (diferencia <= 0) {
-                cuenta.textContent = "¡Ya empezó la fiesta! 🎉";
-                return;
-            }
-
-            const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-            const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
-            const minutos = Math.floor((diferencia / (1000 * 60)) % 60);
-            const segundos = Math.floor((diferencia / 1000) % 60);
-
-            cuenta.textContent = `Faltan ${dias}d ${horas}h ${minutos}m ${segundos}s 🎈`;
-        }
-
-        setInterval(actualizarCuentaRegresiva, 1000);
-        actualizarCuentaRegresiva(); // Llama al cargar la página
-
-        const textos = ["IT’S MY <br>BIRTHDAY", "ALEIDA'S <br>DAY"];
-        let i = 0;
-        const titulo = document.getElementById("titulo");
-
-        setInterval(() => {
-            titulo.classList.remove("rotate-in");
-            titulo.classList.add("rotate-out");
-
-            setTimeout(() => {
-                i = (i + 1) % textos.length;
-                titulo.innerHTML = textos[i];
-                titulo.classList.remove("rotate-out");
-                titulo.classList.add("rotate-in");
-            }, 1000); // Tiempo para coincidir con la animación
-        }, 2500); // Cada 5 segundos
-    </script>
-</body>
+    </main>
+    <script></script>
+  </body>
 </html>
